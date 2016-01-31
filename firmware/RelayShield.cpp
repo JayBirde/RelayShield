@@ -35,11 +35,11 @@ void RelayShield::begin(int i){
 void RelayShield::on(uint8_t i){
     switch(i){
         case 1:
-            digitalWrite(relay1, HIGH);
+            digitalWrite(relay1, LOW);
             relays[1] = true;
             break;
         case 2:
-            digitalWrite(relay2, HIGH);
+            digitalWrite(relay2, LOW);
             relays[2] = true;
             break;
         case 3:
@@ -56,11 +56,11 @@ void RelayShield::on(uint8_t i){
 void RelayShield::off(uint8_t i){
     switch(i){
         case 1:
-            digitalWrite(relay1, LOW);
+            digitalWrite(relay1, HIGH);
             relays[1] = false;
             break;
         case 2:
-            digitalWrite(relay2, LOW);
+            digitalWrite(relay2, HIGH);
             relays[2] = false;
             break;
         case 3:
@@ -75,9 +75,9 @@ void RelayShield::off(uint8_t i){
 }
 
 void RelayShield::allOn(){
-    digitalWrite(relay1,HIGH);
+    digitalWrite(relay1,LOW);
     relays[1] = true;
-    digitalWrite(relay2,HIGH);
+    digitalWrite(relay2,LOW);
     relays[2] = true;
     digitalWrite(relay3,HIGH);
     relays[3] = true;
@@ -86,9 +86,9 @@ void RelayShield::allOn(){
 }
 
 void RelayShield::allOff(){
-    digitalWrite(relay1,LOW);
+    digitalWrite(relay1,HIGH);
     relays[1] = false;
-    digitalWrite(relay2,LOW);
+    digitalWrite(relay2,HIGH);
     relays[2] = false;
     digitalWrite(relay3,LOW);
     relays[3] = false;
